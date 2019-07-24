@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
-import { Constants } from 'expo';
+import { Constants, Font } from 'expo';
 
 export default class WeatherDetailScreen extends React.Component {
   static navigationOptions = ({ navigation }) => {
@@ -18,6 +18,9 @@ export default class WeatherDetailScreen extends React.Component {
   }
 
   componentDidMount() {
+    Font.loadAsync({
+      'custom': require('./assets/fonts/custom.ttf'),
+    });
     const { navigation } = this.props;
     const city = navigation.getParam('city', null);
 
@@ -101,6 +104,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   text: {
+    fontFamily: "custom",
       fontSize: 25,
       textAlign: 'center',
   },
