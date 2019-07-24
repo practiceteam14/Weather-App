@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
-import { Constants } from 'expo';
+import { Constants, Font } from 'expo';
 
 export default class WeatherDetailScreen extends React.Component {
   static navigationOptions = ({ navigation }) => {
@@ -101,6 +101,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   text: {
+    fontFamily: "custom",
       fontSize: 20,
       textAlign: 'center',
   },
