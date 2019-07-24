@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, ImageBackground } from 'react-native';
-import { Constants } from 'expo';
+import { Constants, Font } from 'expo';
 
 export default class WeatherDetailScreen extends React.Component {
     static navigationOptions = ({ navigation }) => {
@@ -17,9 +17,12 @@ export default class WeatherDetailScreen extends React.Component {
         };
     }
 
-    componentDidMount() {
-        const { navigation } = this.props;
-        const city = navigation.getParam('city', null);
+  componentDidMount() {
+    Font.loadAsync({
+      'custom': require('./assets/fonts/custom.ttf'),
+    });
+    const { navigation } = this.props;
+    const city = navigation.getParam('city', null);
 
         console.log(city);
 
@@ -77,7 +80,7 @@ export default class WeatherDetailScreen extends React.Component {
         else {
             weatherImg = require('./assets/weather-img/Clear.png')
         }
-        let backimg=require('./assets/backgroundCity.jpg');
+        let backimg=require('./assets/BackGround.png');
 
         return (
             <ImageBackground
@@ -92,6 +95,7 @@ export default class WeatherDetailScreen extends React.Component {
                             source={weatherImg}
                         />
                     </View>
+                    <Text style={styles.textBold}>{weather}</Text>
                     <Text style={styles.text}>기온은 {celsius.toFixed(1)}℃ 입니다.</Text>
                 </View>
             </ImageBackground>
@@ -108,9 +112,16 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     text: {
-        fontSize: 20,
-        textAlign: 'center',
+    fontFamily: "custom",
+      fontSize: 25,
+      textAlign: 'center',
     },
+    textBold: {
+    fontSize: 40,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginBottom: 10
+   },
     weatherIcon: {
         height: 200,
         width: 200,
