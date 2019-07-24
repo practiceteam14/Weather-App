@@ -81,13 +81,13 @@ export default class WeatherDetailScreen extends React.Component {
     return (
       <View style={styles.container}>
         <View style={{alignItems: 'center'}}>
-          <Text style={styles.text}>오늘 {city}의 날씨는 {weather} 입니다.</Text>
           <Image
             style={styles.weatherIcon}
             source={weatherImg}
           />
         </View>
-        <Text style={styles.text}>기온은 {celsius.toFixed(1)}℃ 입니다.</Text>
+        <Text style={styles.textBold}>{weather}</Text>
+        <Text style={styles.text}>{celsius.toFixed(1)}℃</Text>
       </View>
     );
   }
@@ -101,8 +101,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   text: {
-      fontSize: 20,
+      fontSize: 25,
       textAlign: 'center',
+  },
+  textBold: {
+    fontSize: 40,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginBottom: 10
   },
   weatherIcon: {
       height: 200,
