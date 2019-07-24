@@ -2,6 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a81b02a2-900f-4369-a6f4-f75aba655ff6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/weather-img/Clear.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/weather-img/Clouds.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/weather-img/Drizzle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/weather-img/Dust.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/weather-img/Fog.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/weather-img/Haze.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/weather-img/Mist.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/weather-img/Rain.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/weather-img/Sand.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/weather-img/Snow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/weather-img/Thunderstorm.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CityList.js" beforeDir="false" afterPath="$PROJECT_DIR$/CityList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeatherDetailScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherDetailScreen.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,8 +58,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WeatherDetailScreen.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+            <state relative-caret-position="272">
+              <caret line="78" selection-start-line="78" selection-end-line="78" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -133,12 +145,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1563933703222</updated>
-      <workItem from="1563933705916" duration="1597000" />
+      <workItem from="1563933705916" duration="1876000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1597000" />
+    <option name="totallyTimeSpent" value="1876000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -203,8 +215,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WeatherDetailScreen.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+        <state relative-caret-position="272">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
