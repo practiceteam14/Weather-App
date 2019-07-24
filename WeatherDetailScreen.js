@@ -80,26 +80,25 @@ export default class WeatherDetailScreen extends React.Component {
         else {
             weatherImg = require('./assets/weather-img/Clear.png')
         }
-        let backimg=require('./assets/BackGround.png');
+        let backimg=require('./assets/Background.png');
 
         return (
-            <ImageBackground
-                style={styles.background}
-                source={backimg}
-            >
-                <View style={styles.container}>
-                    <View style={{alignItems: 'center'}}>
-                        <Text style={styles.text}>오늘 {city}의 날씨는 {weather} 입니다.</Text>
-                        <Image
-                            style={styles.weatherIcon}
-                            source={weatherImg}
-                        />
+                <ImageBackground
+                    style={styles.background}
+                    source={backimg}
+                >
+                    <View style={styles.container}>
+                        <View style={{alignItems: 'center'}}>
+                            <Text style={styles.text}>오늘 {city}의 날씨는 {weather} 입니다.</Text>
+                            <Image
+                                style={styles.weatherIcon}
+                                source={weatherImg}
+                            />
+                        </View>
+                        <Text style={styles.textBold}>{weather}</Text>
+                        <Text style={styles.text}>기온은 {celsius.toFixed(1)}℃ 입니다.</Text>
                     </View>
-                    <Text style={styles.textBold}>{weather}</Text>
-                    <Text style={styles.text}>기온은 {celsius.toFixed(1)}℃ 입니다.</Text>
-                </View>
-            </ImageBackground>
-
+                </ImageBackground>
         );
     }
 }
@@ -107,7 +106,6 @@ export default class WeatherDetailScreen extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
         marginTop: Constants.statusBarHeight,
         justifyContent: 'center',
     },
@@ -132,6 +130,5 @@ const styles = StyleSheet.create({
         height:'100%',
         width:'100%',
         resizeMode:'stretch',
-        opacity:0.7
     },
 });
