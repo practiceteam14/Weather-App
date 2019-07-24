@@ -48,7 +48,7 @@ export default class WeatherDetailScreen extends React.Component {
     let celsius = this.state.main.temp - 273.15;
     let weather = this.state.weather[0].main;
 
-    let weatherImg
+    let weatherImg;
 
     if(weather == 'Clear') {
         weatherImg = require(`./assets/weather-img/Clear.png`)
@@ -77,6 +77,7 @@ export default class WeatherDetailScreen extends React.Component {
     else {
         weatherImg = require('./assets/weather-img/Clear.png')
     }
+    
     return (
       <View style={styles.container}>
         <View style={{alignItems: 'center'}}>
