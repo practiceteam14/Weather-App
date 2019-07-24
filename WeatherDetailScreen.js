@@ -18,6 +18,9 @@ export default class WeatherDetailScreen extends React.Component {
   }
 
   componentDidMount() {
+    Font.loadAsync({
+      'custom': require('./assets/fonts/custom.ttf'),
+    });
     const { navigation } = this.props;
     const city = navigation.getParam('city', null);
 
