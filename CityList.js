@@ -1,6 +1,7 @@
 import React from 'react';
 import { FlatList, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { Constants } from 'expo';
+import { SearchBar } from 'react-native-elements';
 
 export default class CityList extends React.Component {
   static navigationOptions = {
@@ -13,6 +14,8 @@ export default class CityList extends React.Component {
     this.state = {
       cities: [],
     };
+
+    this.arrayholder = [];
   }
 
   componentDidMount() {
@@ -21,8 +24,9 @@ export default class CityList extends React.Component {
       .then(cities => {
         console.log('cities =', cities.length);
         this.setState({
-          cities
+          cities: cities
         });
+        this.arrayholder = cities;
       });
   }
 
@@ -45,12 +49,48 @@ export default class CityList extends React.Component {
     );
   }
 
-  render() {
+  updateSearch = text => {
+    this.setState({
+      value: text,
+    });
+
+    const newData = this.arrayholder.filter(item => {
+      const itemData = `${item.toUpperCase()}`;
+      const textData = text.toUpperCase();
+
+      return itemData.indexOf(textData) > -1;
+    });
+
+    console.log('input:' + text);
+
+    this.setState({
+      cities: newData,
+    });
+
+  };
+
+  renderHeader = () => {
     return (
-      <FlatList style={styles.container}
-                renderItem={({ item }) => this.renderItem(item)}
-                keyExtractor={item => item}
-                data={this.state.cities}
+        <SearchBar
+            round
+            lightTheme
+            placeholder="도시 이름을 입력하세요..."
+            onChangeText={text => this.updateSearch(text)}
+            autoCorrect={false}
+            value={this.state.value}
+        />
+    );
+  };
+
+  render() {
+
+    return (
+      <FlatList
+          style={styles.container}
+          renderItem={({ item }) => this.renderItem(item)}
+          keyExtractor={item => item}
+          data={this.state.cities}
+          ListHeaderComponent={this.renderHeader}
       />
     );
   }
@@ -60,7 +100,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    marginTop: Constants.statusBarHeight,
   },
   item: {
     flex: 1,
@@ -68,7 +107,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
 
     borderWidth: 1,
-    borderColor: 'orange',
+    borderColor: '#dddddd',
   },
   text: {
     fontSize: 20,
