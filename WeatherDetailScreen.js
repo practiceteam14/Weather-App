@@ -48,7 +48,7 @@ export default class WeatherDetailScreen extends React.Component {
             )
         }
 
-        let celsius = this.state.main.temp - 273.15;
+        let celsius = this.state.main.temp;
         let weather = this.state.weather[0].main;
 
         let weatherImg;
